@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You - J&S AutoHaus Group </title>
+
+    <!-- Preload GT Walsheim Bold -->
+    <link rel="preload" href="/fonts/GTWalsheim-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- poppins font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- dmsans font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <!-- minify css  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- site icon  -->
+
+    <link rel="icon" href="/images/siteicon.webp" type="image/webp">
+
+
+    <!-- external metatags  -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Valuation Premium Offer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<style>
+    .premium-offer {
+        padding: 2rem;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        perspective: 1000px;
+    }
+
+    .premium-card {
+        background: linear-gradient(145deg, #ffffff, #f8f9fa);
+        border-radius: 30px;
+        padding: 3rem 2rem;
+        box-shadow:
+            0 25px 50px -12px rgba(0, 0, 0, 0.25),
+            0 0 15px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        transform-style: preserve-3d;
+        animation: cardFloat 6s ease-in-out infinite;
+    }
+
+    .floating-elements div {
+        position: absolute;
+        opacity: 0.1;
+        animation: float 15s infinite;
+    }
+
+    .float-circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: #000000;
+        top: -50px;
+        left: -50px;
+    }
+
+    .float-square {
+        width: 80px;
+        height: 80px;
+        background: #000000;
+        bottom: -40px;
+        right: -40px;
+        transform: rotate(45deg);
+    }
+
+    .float-triangle {
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 86.6px solid #000000;
+        top: 50%;
+        right: -25px;
+    }
+
+    .time-strip {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .time-pill {
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .premium-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #1a1a1a, #4a4a4a);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+        margin: 0;
+    }
+
+    .subtitle {
+        text-align: center;
+        color: #666;
+        font-size: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    .price-showcase {
+        text-align: center;
+        margin: 3rem 0;
+        padding: 3rem;
+        background: linear-gradient(135deg, #000000, #222222);
+        border-radius: 20px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .price-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        color: #fff;
+        z-index: 1;
+    }
+
+    .price-glow {
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+        animation: rotate 10s linear infinite;
+    }
+
+    .currency {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    .amount {
+        font-size: 3rem;
+        font-weight: 800;
+        line-height: 1;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .price-tag {
+        color: #fff;
+        font-size: 1rem;
+        margin-top: 1rem;
+        opacity: 0.9;
+    }
+
+    .status-timeline {
+        display: flex;
+        justify-content: space-between;
+        margin: 3rem 0;
+        padding: 0 2rem;
+    }
+
+    .timeline-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        position: relative;
+        flex: 1;
+    }
+
+    .timeline-item::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: #e0e0e0;
+        top: 15px;
+        left: 50%;
+        z-index: -1;
+    }
+
+    .timeline-item:last-child::after {
+        display: none;
+    }
+
+    .status-icon {
+        width: 30px;
+        height: 30px;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border: 2px solid #e0e0e0;
+        color: #666;
+    }
+
+    .status-text {
+        font-size: 0.8rem;
+        color: #666;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .timeline-item.active .status-icon {
+        background: #000000;
+        color: #fff;
+        border-color: #000000;
+    }
+
+    .timeline-item.active .status-text {
+        color: #000000;
+        font-weight: 600;
+    }
+
+    .timeline-item.pulse .status-icon {
+        animation: pulse 2s infinite;
+    }
+
+    .contact-section {
+        margin-top: 4rem;
+        padding-top: 2rem;
+        border-top: 1px solid #eee;
+    }
+
+    .contact-header {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 2rem;
+    }
+
+    .contact-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .contact-card {
+        background: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 15px;
+        position: relative;
+        transition: transform 0.3s ease;
+    }
+
+    .contact-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .step-number {
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 30px;
+        background: #000000;
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-card p {
+        margin: 0;
+        text-align: center;
+        color: #4a4a4a;
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    @keyframes cardFloat {
+
+        0%,
+        100% {
+            transform: translateY(0) rotate3d(1, 1, 0, 0deg);
+        }
+
+        50% {
+            transform: translateY(-10px) rotate3d(1, 1, 0, 2deg);
+        }
+    }
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translate(0, 0) rotate(0deg);
+        }
+
+        50% {
+            transform: translate(10px, -10px) rotate(5deg);
+        }
+    }
+
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.1);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .premium-offer {
+            padding: 1rem;
+        }
+
+        .premium-card {
+            padding: 2rem 1rem;
+        }
+
+        .premium-title {
+            font-size: 2rem;
+        }
+
+        .amount {
+            font-size: 2rem;
+        }
+
+        .contact-cards {
+            grid-template-columns: 1fr;
+        }
+
+        .status-timeline {
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .timeline-item::after {
+            width: 2px;
+            height: 100%;
+            left: 15px;
+            top: 50%;
+        }
+
+        .timeline-item {
+            flex-direction: row;
+            gap: 20px;
+        }
+    }
+</style>
+
+<body>
+    <div class="thank-you-bg">
+
+        <div class="premium-offer">
+            <div class="premium-card">
+                <div class="floating-elements">
+                    <div class="float-circle"></div>
+                    <div class="float-square"></div>
+                    <div class="float-triangle"></div>
+                </div>
+
+                <div class="time-strip">
+                    <div class="time-pill">
+                        <span class="time-icon"><i class="fas fa-clock"></i></span>
+                        <span id="current-datetime">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="price-showcase">
+                    <div class="price-container">
+                        <div class="price-glow"></div>
+                        <span id="currency-symbol" class="currency">$</span>
+                        <span id="offer-price" class="amount">0</span>
+                    </div>
+                    <div class="price-tag">Competitive Market Value</div>
+                </div>
+
+                <div class="status-timeline">
+                    <div class="timeline-item active">
+                        <span class="status-icon"><i class="fas fa-check"></i></span>
+                        <span class="status-text">Offer Ready</span>
+                    </div>
+                    <div class="timeline-item active pulse">
+                        <span class="status-icon"><i class="fas fa-calculator"></i></span>
+                        <span class="status-text">Processing</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="status-icon"><i class="fas fa-handshake"></i></span>
+                        <span class="status-text">Finalization</span>
+                    </div>
+                </div>
+
+                <div class="contact-section">
+                    <div class="contact-header">Next Steps</div>
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <span class="step-number">1</span>
+                            <p><i class="fas fa-phone-alt"></i> Our team will contact you shortly</p>
+                        </div>
+                        <div class="contact-card">
+                            <span class="step-number">2</span>
+                            <p><i class="fas fa-clipboard-check"></i> Quick vehicle verification process</p>
+                        </div>
+                        <div class="contact-card">
+                            <span class="step-number">3</span>
+                            <p><i class="fas fa-check-circle"></i> Same-day offer completion</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Secret key matching the PHP code
+        const SECRET_KEY = 'lkasndfn2q0a##sldkf2-3';
+
+        // Decryption function adapted from PHP
+        function simpleDecrypt(encrypted) {
+            try {
+                const urlDecoded = decodeURIComponent(encrypted);
+                const decoded = atob(urlDecoded);
+                let result = '';
+                for (let i = 0; i < decoded.length; i++) {
+                    const charCode = decoded.charCodeAt(i) ^ SECRET_KEY.charCodeAt(i % SECRET_KEY.length);
+                    result += String.fromCharCode(charCode);
+                }
+                return result;
+            } catch (e) {
+                return 'Decryption error: ' + e.message;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Update date and time
+            function updateDateTime() {
+                const now = new Date();
+                const year = now.getUTCFullYear();
+                const month = String(now.getUTCMonth() + 1).padStart(2, '0');
+                const day = String(now.getUTCDate()).padStart(2, '0');
+                const hours = String(now.getUTCHours()).padStart(2, '0');
+                const minutes = String(now.getUTCMinutes()).padStart(2, '0');
+                const seconds = String(now.getUTCSeconds()).padStart(2, '0');
+                const formatted = `Current Date and Time : ${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+                document.getElementById('current-datetime').textContent = formatted;
+            }
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+
+            // Get query parameter from URL
+            function getQueryParam(param) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
+
+            // Number formatter for consistent display
+            const formatter = new Intl.NumberFormat('en-US', {
+                minimumFractionDigits: 0,  // No decimals for integers
+                maximumFractionDigits: 2   // Up to 2 decimals for floats
+            });
+
+            // Decrypt and parse vehicle price (now using "vp" instead of "vehicle_price")
+            const encryptedVehiclePrice = getQueryParam('vp');
+            let vehiclePrice = null;
+            if (encryptedVehiclePrice) {
+                try {
+                    const decrypted = simpleDecrypt(encryptedVehiclePrice);
+                    vehiclePrice = parseFloat(decrypted);
+                    if (isNaN(vehiclePrice) || vehiclePrice < 0) { // Check for negative or NaN values
+                        throw new Error('Invalid or negative price');
+                    }
+                } catch (e) {
+                    vehiclePrice = null;
+                }
+            }
+
+            // Check for team offer (now using "to" instead of "teamoffer")
+            const teamOffer = getQueryParam('to') === 'true';
+            const priceElement = document.getElementById('offer-price');
+            const currencyElement = document.getElementById('currency-symbol');
+
+            if (teamOffer || vehiclePrice === null) {
+                // Team offer case (including negative or invalid price)
+                currencyElement.style.display = 'none';
+                priceElement.style.fontSize = '1.8rem';
+                priceElement.textContent = 'Our team is working on your offer, a representative will reach out to you shortly!';
+                document.querySelector('.timeline-item:first-child .status-text').textContent = 'Offer Pending';
+                document.querySelector('.timeline-item:nth-child(2) .status-text').textContent = 'Team Review';
+                document.querySelector('.timeline-item:nth-child(3) .status-text').textContent = 'Custom Offer';
+            } else if (vehiclePrice !== null) {
+                // Display decrypted price directly without animation
+                currencyElement.style.display = 'inline';
+                priceElement.textContent = formatter.format(vehiclePrice);
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
