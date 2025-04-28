@@ -90,15 +90,15 @@
                     <a href="#sell" class="btn">SELL YOUR CAR</a>
                     <div class="stats">
                         <div class="stat">
-                            <div class=" counters">1,000+</div>
+                            <div class=" counters"> <span id="reviews-counters"></span>+</div>
                             <div class="label small-text">Reviews</div>
                         </div>
                         <div class="stat">
-                            <div class=" counters">17,000+</div>
+                            <div class=" counters"> <span id="purchased-counters"></span>+</div>
                             <div class="label small-text">Cars Purchased</div>
                         </div>
                         <div class="stat">
-                            <div class=" counters">20+</div>
+                            <div class=" counters"><span id="business-counters"></span>+</div>
                             <div class="label small-text">Years In Business</div>
                         </div>
                     </div>
@@ -558,7 +558,7 @@
             </div>
             <div class="faq">
                 <div class="question">
-                    <h4>7.Do I need to meet you in person?</h4>
+                    <h4>7. Do I need to meet you in person?</h4>
 
                     <svg width="15" height="10" viewBox="0 0 42 25">
                         <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round">
@@ -615,6 +615,7 @@
                     </p>
                 </div>
             </div>
+            <a href="#sell" class="btn">Submit Your Car</a>
         </div>
     </section>
     <!-- CTA Section -->
@@ -732,6 +733,60 @@
             this.classList.toggle("active");
         }
 
+
+        // reviews counters 
+        let count = 0;
+        const target = 1000;
+        const speed = 1; // lower is faster (milliseconds)
+
+        const counterElement = document.getElementById('reviews-counters');
+
+        function updateCounter() {
+            if (count < target) {
+                count++;
+                counterElement.textContent = count;
+                setTimeout(updateCounter, speed);
+            }
+        }
+
+        updateCounter();
+
+
+
+        // purchased counters 
+        let purchased_count = 0;
+        const purchased_target = 17000;
+        const purchased_speed = 0; // lower is faster (milliseconds)
+
+        const purchased_counterElement = document.getElementById('purchased-counters');
+
+        function purchased_updateCounter() {
+            if (purchased_count < purchased_target) {
+                purchased_count++;
+                purchased_counterElement.textContent = purchased_count;
+                setTimeout(purchased_updateCounter, purchased_speed);
+            }
+        }
+
+        purchased_updateCounter();
+
+
+        // business counters 
+        let business_count = 0;
+        const business_target = 20;
+        const business_speed = 100; // lower is faster (milliseconds)
+
+        const business_counterElement = document.getElementById('business-counters');
+
+        function business_updateCounter() {
+            if (business_count < business_target) {
+                business_count++;
+                business_counterElement.textContent = business_count;
+                setTimeout(business_updateCounter, business_speed);
+            }
+        }
+
+        business_updateCounter();
 
     </script>
 

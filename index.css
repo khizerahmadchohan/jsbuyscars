@@ -16,6 +16,10 @@
     --text-font: 'DM Sans', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* ==== RESET & BASE ==== */
 *,
 *::before,
@@ -38,6 +42,33 @@
     animation: zoomInOut 2s infinite ease-in-out;
 }
 
+.btn {
+    display: inline-block;
+
+
+
+
+
+    font-weight: 500;
+
+    /* ,,,,,,,,,,,,,,, */
+
+    color: #ffffff;
+    background-image: linear-gradient(180deg, #000000 0%, #181818 100%);
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15);
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #181818;
+    border-radius: 30px 5px 30px 5px;
+    padding: 16px 24px 16px 24px;
+
+}
+
+.btn:hover {
+    border-radius: 5px 30px 5px 30px;
+    transition-duration: 0.6s;
+}
+
 @keyframes zoomInOut {
 
     0%,
@@ -58,7 +89,7 @@
 body {
     font-family: var(--body-font);
     line-height: 1.6;
-    color: #333;
+    color: #000000;
 }
 
 h1,
@@ -248,8 +279,8 @@ button {
 /* mobile responsive typogrophy */
 @media (max-width: 767px) {
     h1 {
-        font-size: 42px;
-        line-height: 52px;
+        font-size: 42px !important;
+        line-height: 52px !important;
     }
 
     h2 {
@@ -477,14 +508,14 @@ video {
 
 @media (max-width: 768px) {
     .hero-text {
-        padding: 150px 0px 0px 0px !important;
+        padding: 130px 0px 0px 0px !important;
     }
 
     .hero iframe {
         width: 100% !important;
         height: 800px;
         margin-top: 20px !important;
-        padding: 50px 0px 50px 0px !important;
+        padding: 0px 0px 50px 0px !important;
     }
 }
 
@@ -600,7 +631,7 @@ video {
 
 
 
-    font-weight: 700;
+    font-weight: 500;
 
     /* ,,,,,,,,,,,,,,, */
 
@@ -722,6 +753,9 @@ video {
     .trusted-left .content {
         padding: 0px;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .trusted-left h2 {
@@ -1170,7 +1204,7 @@ video {
 
     background: #000;
     /* clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%); */
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 90%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 90%, 0 100%) !important;
     padding: 50px 0px;
     margin-bottom: 150px;
     /* bottom: -150px; */
@@ -1221,6 +1255,21 @@ video {
     margin: 0;
     color: white;
 
+}
+
+/* Tablet Layout (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .luxury-grid {
+        grid-template-columns: repeat(1, 1fr);
+        padding-bottom: 100px;
+        gap: 50px;
+
+    }
+
+    .luxury-bg {
+
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 95%, 0 100%) !important;
+    }
 }
 
 /* Tablet Layout (max-width: 991px) */
@@ -1307,8 +1356,17 @@ video {
         bottom: 0;
     }
 
+
+    .luxury-grid {
+        grid-template-columns: repeat(1, 1fr);
+        padding-bottom: 0px;
+        gap: 50px;
+
+    }
+
     .luxury-bg {
         margin: 0px;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 95%, 0 100%) !important;
     }
 }
 
@@ -1502,7 +1560,7 @@ video {
 
 
 
-    font-weight: 700;
+    font-weight: 500;
     /* ............... */
     color: #ffffff;
     background-image: linear-gradient(180deg, #000000 0%, #181818 100%);
@@ -1674,6 +1732,11 @@ video {
     flex-direction: column;
     align-items: center;
     background: #f5f5f5;
+    text-align: center;
+}
+
+.faq-section .btn {
+    margin-top: 20px;
 }
 
 .title {
@@ -1797,7 +1860,7 @@ video {
     color: #000;
     /* padding: 12px 24px; */
     /* border-radius: 999px; */
-    font-weight: 700;
+    font-weight: 500;
 
 
     /* color: #ffffff; */
@@ -1863,10 +1926,14 @@ video {
     .buy-right {
         flex: 1 1 100%;
         max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .journey-container {
         grid-template-columns: repeat(1, 1fr);
+        margin-top: 40px;
     }
 
     .testimonial-card {
@@ -1906,11 +1973,11 @@ video {
     }
 
     .prev-btn {
-        left: 10px;
+        left: 0px;
     }
 
     .next-btn {
-        right: 10px;
+        right: 0px;
     }
 
     .testimonial-card {
