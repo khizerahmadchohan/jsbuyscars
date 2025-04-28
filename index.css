@@ -1558,7 +1558,7 @@ video {
     display: inline-block;
 
 
-
+    width: fit-content;
 
     font-weight: 500;
     /* ............... */
@@ -1601,6 +1601,9 @@ video {
         text-align: center;
     }
 
+    .buy-right .btn {
+        align-self: center;
+    }
 }
 
 /* ==== TESTIMONIALS ==== */
