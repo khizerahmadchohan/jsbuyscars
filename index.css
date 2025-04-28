@@ -1821,8 +1821,9 @@ video {
 
 
 @media (max-width: 600px) {
-    .faq-section {
-        padding: 50px 0px;
+
+    .answer p {
+        text-align: center;
     }
 }
 
